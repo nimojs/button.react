@@ -28,12 +28,25 @@
 }
 ````
 
+## icon
+
+````code
+{
+    title: '图标',
+    desc: '',
+    html: '<div id="icon-demo" ></div>',
+    js: './Icon.demo.js',
+    source: './Icon.js',
+    open: false
+}
+````
+
 ## loading
 
 ````code
 {
     title: '加载',
-    desc: '',
+    desc: '`loading={true}`',
     html: '<div id="loading-demo" ></div>',
     js: './Loading.demo.js',
     source: './Loading.js',
@@ -50,6 +63,26 @@
     html: '<div id="group-demo" ></div>',
     js: './Group.demo.js',
     source: './Group.js',
+    open: false
+}
+````
+
+
+## size
+
+````css
+.face-btn--big {
+    font-size:2em;
+}
+````
+
+````code
+{
+    title: '尺寸',
+    desc: ' `size="small"` `size="large"`',
+    html: '<div id="size-demo" ></div>',
+    js: './Size.demo.js',
+    source: './Size.js',
     open: false
 }
 ````

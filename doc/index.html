@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="theme/face/face.css">
+<meta name="keywords" content="">
+<meta name="description" content="示例">
+<title>示例</title>
+</head>
+<body>
+<div class="face-one-head">
+    <a class="face-one-head-logo" href="../index.html">
+        <img src="theme/media/logo.svg" alt="" class="face-one-head-logo-photo" />
+        face
+    </a>
+    <span class="face-one-head-slogan">
+        Write less code, do more things!
+    </span>
+    <!-- <div class="face-one-head-search">
+        <span class="face-one-head-search-icon fi fi-search"></span>
+        <input type="text" class="face-one-head-search-input" placeholder="搜索..." />
+    </div> -->
+    <div class="face-one-head-nav">
+        <span class="face-one-head-nav-switch fi fi-bars"></span>
+        <div class="face-one-head-nav-F-cnt">
+            <a href="../index.html" class="face-one-head-nav-link">首页</a>
+            <a href="intro.html" class="face-one-head-nav-link">指引</a>
+            <a href="index.html" class="face-one-head-nav-link">文档</a>
+        </div>
+        <script>
+        Array.from(document.querySelectorAll('.face-one-head-nav-link')).forEach(function (node) {
+            if (node.href) {
+                var pathname = node.href.replace(/\?.*/, '')
+                if (pathname === location.origin + location.pathname) {
+                    node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-head-nav-link--on')
+                }
+            }
+        })
+        </script>
+    </div>
+</div>
+
+<div class="face-one-layout">
+<div class="face-one-layout-F-line">
+<div class="face-one-layout-sidebar">
+<div class="face-one-nav">
+<span class="face-one-nav-switch fi fi-angle-double-right"></span>
+<div class="face-one-nav-F-inner">
+<div class="face-one-nav-item face-one-nav-item--on">
+    <a href="intro.html" class="face-one-nav-item-label">指引</a>
+</div>
+<!-- face-one-nav-item--group-on 控制默认展开 -->
+<div class="face-one-nav-item face-one-nav-item--group face-one-nav-item--group-on">
+    <span class="face-one-nav-item-switch fi fi-angle-down"></span>
+    <span class="face-one-nav-item-label">
+        文档
+    </span>
+    <div class="face-one-nav-item-group">
+        <div class="face-one-nav-item-group-title">示例</div>
+        <a href="index.html#style" class="face-one-nav-item-group-item">颜色</a>
+        <a href="index.html#border" class="face-one-nav-item-group-item">边框</a>
+        <a href="index.html#icon" class="face-one-nav-item-group-item">图标</a>
+        <a href="index.html#loading" class="face-one-nav-item-group-item">加载中</a>
+        <a href="index.html#group" class="face-one-nav-item-group-item">按钮组</a>
+        <a href="index.html#size" class="face-one-nav-item-group-item">尺寸</a>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="face-one-layout-cnt">
+<div id="face-one-cnt" class="face-one-cnt markdown-body">
+<div id="face-one-sidebar" class="face-one-sidebar"></div>
+<h1 id="示例" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#示例"><span class="markrun-anchor-link"></span></a>示例</h1><blockquote>
+<p>所有属性参数，可以随意组合，达到各种效果。</p>
+</blockquote>
+<h2 id="style" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#style"><span class="markrun-anchor-link"></span></a>style</h2>
+    <div class="face-one-code ">
+                        <div class="face-one-code-example">
+                            <div id="style-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">风格</div>
+                            <div class="face-one-code-info-desc">
+                                <p><code>type=&quot;primary&quot;</code></p>
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> <span class="hljs-type">React</span> = require(<span class="hljs-symbol">'reac</span>t')
+<span class="hljs-keyword">var</span> <span class="hljs-type">Button</span> = require(<span class="hljs-symbol">'button</span>.react')
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Style</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        <span class="hljs-keyword">return</span> (
+            &lt;div&gt;
+                &lt;<span class="hljs-type">Button</span>&gt;<span class="hljs-keyword">default</span>&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"primary"</span> &gt;primary&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"danger"</span> &gt;danger&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"info"</span> &gt;info&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"warning"</span> &gt;warning&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"success"</span> &gt;success&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"disabled"</span> &gt;diasbled&lt;/<span class="hljs-type">Button</span>&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+module.exports = <span class="hljs-type">Style</span>
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="border" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#border"><span class="markrun-anchor-link"></span></a>border</h2>
+    <div class="face-one-code ">
+                        <div class="face-one-code-example">
+                            <div id="border-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">边框</div>
+                            <div class="face-one-code-info-desc">
+                                <p><code>ghost</code> <code>dashed</code></p>
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> React = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react'</span>)
+<span class="hljs-keyword">var</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'button.react'</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Border</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">ghost</span> &gt;</span>ghost<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                {' '}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">dashed</span> &gt;</span>dashed<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                {' '}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">ghost</span> <span class="hljs-attr">dashed</span> &gt;</span>ghost dashed<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                {' '}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+
+<span class="hljs-built_in">module</span>.exports = Border
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="icon" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#icon"><span class="markrun-anchor-link"></span></a>icon</h2>
+    <div class="face-one-code ">
+                        <div class="face-one-code-example">
+                            <div id="icon-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">图标</div>
+                            <div class="face-one-code-info-desc">
+                                
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> React = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react'</span>)
+<span class="hljs-keyword">var</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'button.react'</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Icon</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">icon</span> &gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            {' '}
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">icon</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> &gt;</span>&amp;copy;<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            {' '}
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">icon</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span> &gt;</span>&amp;cent;<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            {' '}
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">prepend</span>=<span class="hljs-string">{(</span>&lt;<span class="hljs-attr">span</span>&gt;</span>&amp;copy;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)}&gt;
+                prepend
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            {' '}
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">append</span>=<span class="hljs-string">{(</span>&lt;<span class="hljs-attr">span</span>&gt;</span>&amp;cent;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)}&gt;
+                append
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+
+<span class="hljs-built_in">module</span>.exports = Icon
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="loading" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#loading"><span class="markrun-anchor-link"></span></a>loading</h2>
+    <div class="face-one-code ">
+                        <div class="face-one-code-example">
+                            <div id="loading-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">加载</div>
+                            <div class="face-one-code-info-desc">
+                                <p><code>loading={true}</code></p>
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> <span class="hljs-type">React</span> = require(<span class="hljs-symbol">'reac</span>t')
+<span class="hljs-keyword">var</span> <span class="hljs-type">Button</span> = require(<span class="hljs-symbol">'button</span>.react')
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Loading</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        <span class="hljs-keyword">return</span> (
+            &lt;div&gt;
+                &lt;<span class="hljs-type">Button</span> loading={<span class="hljs-literal">true</span>} &gt;<span class="hljs-keyword">default</span>&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> loading={<span class="hljs-literal">true</span>} <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"primary"</span> &gt;primary&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> loading={<span class="hljs-literal">true</span>} <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"danger"</span> &gt;danger&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> loading={<span class="hljs-literal">true</span>} <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"info"</span> &gt;info&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> loading={<span class="hljs-literal">true</span>} <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"warning"</span> &gt;warning&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> loading={<span class="hljs-literal">true</span>} <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"success"</span> &gt;success&lt;/<span class="hljs-type">Button</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">Button</span> loading={<span class="hljs-literal">true</span>} <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"disabled"</span> &gt;diasbled&lt;/<span class="hljs-type">Button</span>&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+module.exports = <span class="hljs-type">Loading</span>
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="group" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#group"><span class="markrun-anchor-link"></span></a>group</h2>
+    <div class="face-one-code ">
+                        <div class="face-one-code-example">
+                            <div id="group-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">按钮组</div>
+                            <div class="face-one-code-info-desc">
+                                
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> React = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react'</span>)
+<span class="hljs-keyword">var</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'button.react'</span>)
+<span class="hljs-keyword">var</span> { ButtonGroup } = Button
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Group</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span> 默认
+                <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> &gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> &gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> &gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span> 主要
+                <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">icon</span> &gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">icon</span> &gt;</span>&amp;copy;<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">icon</span> &gt;</span>&amp;cent;<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span> icon
+                <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"disabled"</span> &gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span> disabled
+                <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">ghost</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">ghost</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">ghost</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span> ghost
+                <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">dashed</span> &gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">dashed</span> &gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">dashed</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span> dashed
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+
+<span class="hljs-built_in">module</span>.exports = Group
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="size" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#size"><span class="markrun-anchor-link"></span></a>size</h2><div class="markrun markrun--css">
+<div class="markrun-html"></div>
+<div class="markrun-code">
+<style>
+.face-btn--big {
+    font-size:2em;
+}</style>
+</div>
+<div class="markrun-source">
+<pre><code class="lang-css"><span class="hljs-selector-class">.face-btn--big</span> {
+    <span class="hljs-attribute">font-size</span>:<span class="hljs-number">2em</span>;
+}
+</code></pre></div>
+</div>
+
+    <div class="face-one-code ">
+                        <div class="face-one-code-example">
+                            <div id="size-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">尺寸</div>
+                            <div class="face-one-code-info-desc">
+                                <p><code>size=&quot;small&quot;</code> <code>size=&quot;large&quot;</code></p>
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> React = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react'</span>)
+<span class="hljs-keyword">var</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'button.react'</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Size</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        <span class="hljs-keyword">const</span> self = <span class="hljs-keyword">this</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"small"</span> &gt;</span>small<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                {' '}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                {' '}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>&gt;</span>large<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>/&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{fontSize:</span> "<span class="hljs-attr">1.5em</span>"}}&gt;</span>font-size: 1.5em<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                {' '}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{fontSize:</span> "<span class="hljs-attr">2em</span>"}}&gt;</span>font-size: 2em<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                {' '}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"big"</span> &gt;</span>custom size<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+
+<span class="hljs-built_in">module</span>.exports = Size
+</code></pre>
+                        </div>
+                        
+                    </div></div>
+</div>
+</div>
+</div>
+<script>
+Array.from(document.querySelectorAll('.face-one-nav-item-label')).forEach(function (node) {
+    if (node.href) {
+        var pathname = node.href.replace(/\?.*/, '')
+        if (pathname === location.origin + location.pathname + location.hash) {
+            node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-nav-item-label--on')
+        }
+    }
+})
+var faceOneGetParent = function faceOneGetParent (el, className) {
+   if (el.parentNode.nodeName.toLowerCase() === 'html') {
+       return null
+   }
+   var parentClassName = el.parentNode.getAttribute('class')
+   var classNames = ''
+   if (parentClassName) {
+       classNames = parentClassName.split(' ')
+   }
+   if (classNames.indexOf(className) !== -1) {
+       return el.parentNode
+   }
+   else {
+       return faceOneGetParent(el.parentNode, className)
+   }
+}
+Array.from(document.querySelectorAll('.face-one-nav-item-group-item')).forEach(function (node) {
+    addAvativeClass(node)
+    function addAvativeClass (node)  {
+        if (node.href) {
+            var pathname = node.href.replace(/\?.*/, '')
+            if (pathname === location.origin + location.pathname + location.hash) {
+                node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-nav-item-group-item--on')
+                var parentNode = faceOneGetParent(node, 'face-one-nav-item--group')
+                if (parentNode) {
+                    parentNode.setAttribute('class', parentNode.getAttribute('class') + ' ' + 'face-one-nav-item--group-on')
+                }
+            }
+        }
+    }
+
+})
+</script>
+<div class="face-one-foot">
+    <div class="face-one-foot-F-inner">
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-github"></span>
+                Github
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/button.react" class="face-one-foot-group-item-link">button.react</a>
+                - 项目源码
+            </div>
+        </div>
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-link"></span>
+                相关站点
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/module" class="face-one-foot-group-item-link">module</a>
+                - 开源项目脚手架
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="http://onface.cc/" class="face-one-foot-group-item-link">onface.cc</a>
+                - 资源集合
+            </div>
+        </div>
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-users"></span>
+                社区
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/button.react/issues" class="face-one-foot-group-item-link">Github issues</a>
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/button.react/issues/new" class="face-one-foot-group-item-link">提交bug</a>
+            </div>
+        </div>
+        <div class="face-one-foot-copyright">
+            <a href="../index.html" class="face-one-foot-copyright-title">
+                <img src="theme/media/logo.svg" class="face-one-foot-copyright-title-logo" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="theme/jquery.js"></script>
+<script>delete window.$</script>
+<script src="theme/face/face.js" ></script>
+<script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./Style.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./Border.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./Icon.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./Loading.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./Group.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./Size.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script></body>
+</html>

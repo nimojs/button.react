@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/button.react/0.1.0";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -144,6 +144,21 @@ var Size = function (_React$Component) {
                     Button,
                     { size: 'big' },
                     'custom size'
+                ),
+                ' ',
+                __webpack_require__("./node_modules/react/index.js").createElement(
+                    Button,
+                    {
+                        style: {
+                            fontSize: 30,
+                            lineHeight: '30px',
+                            padding: 10,
+                            color: 'skyblue',
+                            background: '#e6f7ff',
+                            border: '1px solid #91d5ff'
+                        }
+                    },
+                    'custom size 2'
                 )
             );
         }
@@ -307,7 +322,7 @@ function getProps(props, state) {
     delete cloneProps.append;
     delete cloneProps.icon;
     delete cloneProps.size;
-
+    delete cloneProps.themes;
     cloneProps.className = rootClassName;
     return cloneProps;
 }
@@ -2213,7 +2228,7 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./doc/Size.demo.js");

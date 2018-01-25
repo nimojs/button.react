@@ -60,28 +60,30 @@
 /******/ 	__webpack_require__.p = "/button.react/0.1.0";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./doc/Icon.demo.js":
+/***/ "./doc/PrefixClassName.demo.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var ReactDOM = __webpack_require__("./node_modules/react-dom/index.js");
-var Icon = __webpack_require__("./doc/Icon.js");
-ReactDOM.render(__webpack_require__("./node_modules/react/index.js").createElement(Icon, null), document.getElementById('icon-demo'));
+var PrefixClassName = __webpack_require__("./doc/PrefixClassName.js");
+ReactDOM.render(__webpack_require__("./node_modules/react/index.js").createElement(PrefixClassName, null), document.getElementById('prefixClassName-demo'));
 
 /***/ }),
 
-/***/ "./doc/Icon.js":
+/***/ "./doc/PrefixClassName.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94,68 +96,56 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__("./node_modules/react/index.js");
 var Button = __webpack_require__("./lib/index.js");
 
-var Icon = function (_React$Component) {
-    _inherits(Icon, _React$Component);
+var MyButton = function (_React$Component) {
+    _inherits(MyButton, _React$Component);
 
-    function Icon() {
-        _classCallCheck(this, Icon);
+    function MyButton() {
+        _classCallCheck(this, MyButton);
 
-        return _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (MyButton.__proto__ || Object.getPrototypeOf(MyButton)).apply(this, arguments));
     }
 
-    _createClass(Icon, [{
+    _createClass(MyButton, [{
         key: 'render',
         value: function render() {
+            return __webpack_require__("./node_modules/react/index.js").createElement(Button, _extends({ prefixClassName: 'my-btn' }, this.props));
+        }
+    }]);
+
+    return MyButton;
+}(React.Component);
+
+var PrefixClassName = function (_React$Component2) {
+    _inherits(PrefixClassName, _React$Component2);
+
+    function PrefixClassName() {
+        _classCallCheck(this, PrefixClassName);
+
+        return _possibleConstructorReturn(this, (PrefixClassName.__proto__ || Object.getPrototypeOf(PrefixClassName)).apply(this, arguments));
+    }
+
+    _createClass(PrefixClassName, [{
+        key: 'render',
+        value: function render() {
+            var self = this;
             return __webpack_require__("./node_modules/react/index.js").createElement(
                 'div',
                 null,
                 __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { icon: true },
-                    '\xD7'
-                ),
-                ' ',
-                __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { icon: true, type: 'primary' },
-                    '\xA9'
-                ),
-                ' ',
-                __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { icon: true, type: 'danger' },
-                    '\xA2'
-                ),
-                ' ',
-                __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { prepend: __webpack_require__("./node_modules/react/index.js").createElement(
-                            'span',
-                            null,
-                            '\xA9'
-                        ) },
-                    'prepend'
-                ),
-                ' ',
-                __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { append: __webpack_require__("./node_modules/react/index.js").createElement(
-                            'span',
-                            null,
-                            '\xA2'
-                        ) },
-                    'append'
+                    MyButton,
+                    { size: 'small' },
+                    'small'
                 )
             );
         }
     }]);
 
-    return Icon;
+    return PrefixClassName;
 }(React.Component);
 /*ONFACE-DEL*/
 
-Icon = __webpack_require__("./node_modules/react-hot-loader/lib/index.js").hot(module)(Icon);
-module.exports = Icon;
+PrefixClassName = __webpack_require__("./node_modules/react-hot-loader/lib/index.js").hot(module)(PrefixClassName);
+module.exports = PrefixClassName;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
@@ -2214,10 +2204,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./doc/Icon.demo.js");
+module.exports = __webpack_require__("./doc/PrefixClassName.demo.js");
 
 
 /***/ })

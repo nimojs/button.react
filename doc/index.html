@@ -371,13 +371,173 @@ module.exports = <span class="hljs-type">Loading</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{fontSize:</span> "<span class="hljs-attr">2em</span>"}}&gt;</span>font-size: 2em<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
                 {' '}
                 <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"big"</span> &gt;</span>custom size<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
-
+                {' '}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+                    <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span>
+                        <span class="hljs-attr">fontSize:</span> <span class="hljs-attr">30</span>,
+                        <span class="hljs-attr">lineHeight:</span> '<span class="hljs-attr">30px</span>',
+                        <span class="hljs-attr">padding:</span> <span class="hljs-attr">10</span>,
+                        <span class="hljs-attr">color:</span> '<span class="hljs-attr">skyblue</span>',
+                        <span class="hljs-attr">background:</span> '#<span class="hljs-attr">e6f7ff</span>',
+                        <span class="hljs-attr">border:</span> '<span class="hljs-attr">1px</span> <span class="hljs-attr">solid</span> #<span class="hljs-attr">91d5ff</span>',
+                    }}
+                &gt;</span>
+                    custom size 2
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
         )
     }
 }
 
 <span class="hljs-built_in">module</span>.exports = Size
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="themes" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#themes"><span class="markrun-anchor-link"></span></a>themes</h2><div class="markrun markrun--css">
+<div class="markrun-html"></div>
+<div class="markrun-code">
+<style>
+/* 二次封装 */
+.face-btn--themes-night {
+    background-color: #444;
+    background-image: -webkit-linear-gradient(top,#444,#333);
+    border-color: transparent;
+    color:white;
+}
+.face-btn--themes-night.face-btn--clicked:before {
+    border-color: #444;
+}
+/* 三次封装 */
+.face-btn--themes-link {
+    text-decoration: underline;
+}</style>
+</div>
+<div class="markrun-source">
+<pre><code class="lang-css"><span class="hljs-comment">/* 二次封装 */</span>
+<span class="hljs-selector-class">.face-btn--themes-night</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#444</span>;
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">-webkit-linear-gradient</span>(top,#444,#333);
+    <span class="hljs-attribute">border-color</span>: transparent;
+    <span class="hljs-attribute">color</span>:white;
+}
+<span class="hljs-selector-class">.face-btn--themes-night</span><span class="hljs-selector-class">.face-btn--clicked</span><span class="hljs-selector-pseudo">:before</span> {
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#444</span>;
+}
+<span class="hljs-comment">/* 三次封装 */</span>
+<span class="hljs-selector-class">.face-btn--themes-link</span> {
+    <span class="hljs-attribute">text-decoration</span>: underline;
+}
+</code></pre></div>
+</div>
+
+    <div class="face-one-code  face-one-code--open">
+                        <div class="face-one-code-example">
+                            <div id="themes-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">多次封装</div>
+                            <div class="face-one-code-info-desc">
+                                
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> <span class="hljs-type">React</span> = require(<span class="hljs-symbol">'reac</span>t')
+<span class="hljs-keyword">var</span> <span class="hljs-type">Button</span> = require(<span class="hljs-symbol">'button</span>.react')
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ButtonNight</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        let themes = <span class="hljs-keyword">this</span>.props.themes
+        <span class="hljs-comment">// 二次封装 night</span>
+        themes = themes + ' night'
+        console.log(<span class="hljs-keyword">this</span>.props.themes, themes)
+        <span class="hljs-keyword">return</span> (
+            &lt;<span class="hljs-type">Button</span> {...<span class="hljs-keyword">this</span>.props} themes={themes} /&gt;
+        )
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ButtonNightLink</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        let themes = <span class="hljs-keyword">this</span>.props.themes
+        <span class="hljs-comment">// 三次封装 light</span>
+        themes = themes + ' link'
+        <span class="hljs-keyword">return</span> (
+            &lt;<span class="hljs-type">ButtonNight</span> {...<span class="hljs-keyword">this</span>.props} themes={themes} /&gt;
+        )
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Themes</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        const self = <span class="hljs-keyword">this</span>
+        <span class="hljs-keyword">return</span> (
+            &lt;div&gt;
+                &lt;<span class="hljs-type">ButtonNight</span> size=<span class="hljs-string">"small"</span> &gt;small&lt;/<span class="hljs-type">ButtonNight</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">ButtonNight</span> size=<span class="hljs-string">"large"</span> &gt;large&lt;/<span class="hljs-type">ButtonNight</span>&gt;
+                &lt;hr /&gt;
+                &lt;<span class="hljs-type">ButtonNightLink</span> size=<span class="hljs-string">"small"</span> &gt;small&lt;/<span class="hljs-type">ButtonNightLink</span>&gt;
+                {' '}
+                &lt;<span class="hljs-type">ButtonNightLink</span> size=<span class="hljs-string">"large"</span> &gt;large&lt;/<span class="hljs-type">ButtonNightLink</span>&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+module.exports = <span class="hljs-type">Themes</span>
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="prefixClassName" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/button.react/#prefixClassName"><span class="markrun-anchor-link"></span></a>prefixClassName</h2><div class="markrun markrun--html">
+<div class="markrun-html"></div>
+<div class="markrun-code">
+<link rel="stylesheet" href="prefixClassName.css" /></div>
+<div class="markrun-source">
+<pre><code class="lang-html">&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"./prefixClassName.css"</span> /&gt;
+</code></pre></div>
+</div>
+
+    <div class="face-one-code  face-one-code--open">
+                        <div class="face-one-code-example">
+                            <div id="prefixClassName-demo" ></div>
+                        </div>
+                        <div class="face-one-code-info">
+                            <div class="face-one-code-info-title">完全自定义样式</div>
+                            <div class="face-one-code-info-desc">
+                                <p>将 <a href="https://github.com/onface/button.react/blob/master/lib/index.css">lib/index.css</a> 修改为 <a href="../Users/nimo/Documents/git/button.react/prefixClassName.css">./prefixClassName.css</a> 并引用。配置 <code>prefixClassName</code></p>
+                            </div>
+                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">var</span> <span class="hljs-type">React</span> = require(<span class="hljs-symbol">'reac</span>t')
+<span class="hljs-keyword">var</span> <span class="hljs-type">Button</span> = require(<span class="hljs-symbol">'button</span>.react')
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyButton</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        <span class="hljs-keyword">return</span> (
+            &lt;<span class="hljs-type">Button</span> prefixClassName=<span class="hljs-string">"my-btn"</span> {...<span class="hljs-keyword">this</span>.props} /&gt;
+        )
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PrefixClassName</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render () {
+        const self = <span class="hljs-keyword">this</span>
+        <span class="hljs-keyword">return</span> (
+            &lt;div&gt;
+                &lt;<span class="hljs-type">MyButton</span> size=<span class="hljs-string">"small"</span> &gt;small&lt;/<span class="hljs-type">MyButton</span>&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+module.exports = <span class="hljs-type">PrefixClassName</span>
 </code></pre>
                         </div>
                         
@@ -488,5 +648,9 @@ Array.from(document.querySelectorAll('.face-one-nav-item-group-item')).forEach(f
                         document.write('<scri' + 'pt src="./Group.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
                         </script><script data-markrun-lastrun="true">
                         document.write('<scri' + 'pt src="./Size.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./Themes.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./PrefixClassName.demo.js?v=0.1.0"' + '" ></sc' + 'ript>')
                         </script></body>
 </html>

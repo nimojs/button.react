@@ -16,7 +16,19 @@ class Size extends React.Component {
                 <Button style={{fontSize: "2em"}}>font-size: 2em</Button>
                 {' '}
                 <Button size="big" >custom size</Button>
-
+                {' '}
+                <Button
+                    style={{
+                        fontSize: 30,
+                        lineHeight: '30px',
+                        padding: 10,
+                        color: 'skyblue',
+                        background: '#e6f7ff',
+                        border: '1px solid #91d5ff',
+                    }}
+                >
+                    custom size 2
+                </Button>
             </div>
         )
     }

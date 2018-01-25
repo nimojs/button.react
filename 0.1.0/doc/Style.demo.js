@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/button.react/0.1.0";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -312,7 +312,7 @@ function getProps(props, state) {
     delete cloneProps.append;
     delete cloneProps.icon;
     delete cloneProps.size;
-
+    delete cloneProps.themes;
     cloneProps.className = rootClassName;
     return cloneProps;
 }
@@ -2218,7 +2218,7 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./doc/Style.demo.js");

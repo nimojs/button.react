@@ -60,28 +60,30 @@
 /******/ 	__webpack_require__.p = "/button.react/0.1.0";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./doc/Icon.demo.js":
+/***/ "./doc/Themes.demo.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var ReactDOM = __webpack_require__("./node_modules/react-dom/index.js");
-var Icon = __webpack_require__("./doc/Icon.js");
-ReactDOM.render(__webpack_require__("./node_modules/react/index.js").createElement(Icon, null), document.getElementById('icon-demo'));
+var Themes = __webpack_require__("./doc/Themes.js");
+ReactDOM.render(__webpack_require__("./node_modules/react/index.js").createElement(Themes, null), document.getElementById('themes-demo'));
 
 /***/ }),
 
-/***/ "./doc/Icon.js":
+/***/ "./doc/Themes.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94,68 +96,100 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__("./node_modules/react/index.js");
 var Button = __webpack_require__("./lib/index.js");
 
-var Icon = function (_React$Component) {
-    _inherits(Icon, _React$Component);
+var ButtonNight = function (_React$Component) {
+    _inherits(ButtonNight, _React$Component);
 
-    function Icon() {
-        _classCallCheck(this, Icon);
+    function ButtonNight() {
+        _classCallCheck(this, ButtonNight);
 
-        return _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (ButtonNight.__proto__ || Object.getPrototypeOf(ButtonNight)).apply(this, arguments));
     }
 
-    _createClass(Icon, [{
+    _createClass(ButtonNight, [{
         key: 'render',
         value: function render() {
+            var themes = this.props.themes;
+            // 二次封装 night
+            themes = themes + ' night';
+            console.log(this.props.themes, themes);
+            return __webpack_require__("./node_modules/react/index.js").createElement(Button, _extends({}, this.props, { themes: themes }));
+        }
+    }]);
+
+    return ButtonNight;
+}(React.Component);
+
+var ButtonNightLink = function (_React$Component2) {
+    _inherits(ButtonNightLink, _React$Component2);
+
+    function ButtonNightLink() {
+        _classCallCheck(this, ButtonNightLink);
+
+        return _possibleConstructorReturn(this, (ButtonNightLink.__proto__ || Object.getPrototypeOf(ButtonNightLink)).apply(this, arguments));
+    }
+
+    _createClass(ButtonNightLink, [{
+        key: 'render',
+        value: function render() {
+            var themes = this.props.themes;
+            // 三次封装 light
+            themes = themes + ' link';
+            return __webpack_require__("./node_modules/react/index.js").createElement(ButtonNight, _extends({}, this.props, { themes: themes }));
+        }
+    }]);
+
+    return ButtonNightLink;
+}(React.Component);
+
+var Themes = function (_React$Component3) {
+    _inherits(Themes, _React$Component3);
+
+    function Themes() {
+        _classCallCheck(this, Themes);
+
+        return _possibleConstructorReturn(this, (Themes.__proto__ || Object.getPrototypeOf(Themes)).apply(this, arguments));
+    }
+
+    _createClass(Themes, [{
+        key: 'render',
+        value: function render() {
+            var self = this;
             return __webpack_require__("./node_modules/react/index.js").createElement(
                 'div',
                 null,
                 __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { icon: true },
-                    '\xD7'
+                    ButtonNight,
+                    { size: 'small' },
+                    'small'
                 ),
                 ' ',
                 __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { icon: true, type: 'primary' },
-                    '\xA9'
+                    ButtonNight,
+                    { size: 'large' },
+                    'large'
+                ),
+                __webpack_require__("./node_modules/react/index.js").createElement('hr', null),
+                __webpack_require__("./node_modules/react/index.js").createElement(
+                    ButtonNightLink,
+                    { size: 'small' },
+                    'small'
                 ),
                 ' ',
                 __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { icon: true, type: 'danger' },
-                    '\xA2'
-                ),
-                ' ',
-                __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { prepend: __webpack_require__("./node_modules/react/index.js").createElement(
-                            'span',
-                            null,
-                            '\xA9'
-                        ) },
-                    'prepend'
-                ),
-                ' ',
-                __webpack_require__("./node_modules/react/index.js").createElement(
-                    Button,
-                    { append: __webpack_require__("./node_modules/react/index.js").createElement(
-                            'span',
-                            null,
-                            '\xA2'
-                        ) },
-                    'append'
+                    ButtonNightLink,
+                    { size: 'large' },
+                    'large'
                 )
             );
         }
     }]);
 
-    return Icon;
+    return Themes;
 }(React.Component);
 /*ONFACE-DEL*/
 
-Icon = __webpack_require__("./node_modules/react-hot-loader/lib/index.js").hot(module)(Icon);
-module.exports = Icon;
+Themes = __webpack_require__("./node_modules/react-hot-loader/lib/index.js").hot(module)(Themes);
+module.exports = Themes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
@@ -2214,10 +2248,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 7:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./doc/Icon.demo.js");
+module.exports = __webpack_require__("./doc/Themes.demo.js");
 
 
 /***/ })

@@ -289,7 +289,7 @@ function getProps(props, state) {
     delete cloneProps.append;
     delete cloneProps.icon;
     delete cloneProps.size;
-
+    delete cloneProps.themes;
     cloneProps.className = rootClassName;
     return cloneProps;
 }

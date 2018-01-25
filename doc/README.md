@@ -86,3 +86,51 @@
     open: false
 }
 ````
+
+## themes
+
+````css
+/* 二次封装 */
+.face-btn--themes-night {
+    background-color: #444;
+    background-image: -webkit-linear-gradient(top,#444,#333);
+    border-color: transparent;
+    color:white;
+}
+.face-btn--themes-night.face-btn--clicked:before {
+    border-color: #444;
+}
+/* 三次封装 */
+.face-btn--themes-link {
+    text-decoration: underline;
+}
+````
+
+````code
+{
+    title: '多次封装',
+    desc: '',
+    html: '<div id="themes-demo" ></div>',
+    js: './Themes.demo.js',
+    source: './Themes.js',
+    open: true
+}
+````
+
+## prefixClassName
+
+````html
+<link rel="stylesheet" href="./prefixClassName.css" />
+````
+
+
+````code
+{
+    title: '完全自定义样式',
+    desc: '将 [lib/index.css](https://github.com/onface/button.react/blob/master/lib/index.css) 修改为 [./prefixClassName.css](./prefixClassName.css) 并引用。配置 `prefixClassName`',
+    html: '<div id="prefixClassName-demo" ></div>',
+    js: './PrefixClassName.demo.js',
+    source: './PrefixClassName.js',
+    open: true
+}
+````

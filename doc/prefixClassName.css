@@ -1,0 +1,339 @@
+@my-btn-color: #f5f5f5;
+@my-btn-dark-color: darken(@my-btn-color, 3%);
+@my-btn-light-color: lighten(@my-btn-color, 3%);
+
+@my-btn--primary-color: #4387fd;
+@my-btn--primary-dark-color: darken(@my-btn--primary-color, 3%);
+@my-btn--primary-light-color: lighten(@my-btn--primary-color, 3%);
+
+@my-btn--danger-color: #d85c4b;
+@my-btn--danger-dark-color: darken(@my-btn--danger-color, 3%);
+@my-btn--danger-light-color: lighten(@my-btn--danger-color, 3%);
+
+@my-btn--warning-color: #F2AD54;
+@my-btn--warning-dark-color: darken(@my-btn--warning-color, 3%);
+@my-btn--warning-light-color: lighten(@my-btn--warning-color, 3%);
+
+@my-btn--info-color: #03a9f4;
+@my-btn--info-dark-color: darken(@my-btn--info-color, 3%);
+@my-btn--info-light-color: lighten(@my-btn--info-color, 3%);
+
+@my-btn--success-color: #5dc75d;
+@my-btn--success-dark-color: darken(@my-btn--success-color, 3%);
+@my-btn--success-light-color: lighten(@my-btn--success-color, 3%);
+
+
+@my-btn--disabled-color: rgba(0, 0, 0, 0.25);
+
+@my-btn-default-border-color: #d9d9d9;
+@my-btn-text-color: rgba(0, 0, 0, 0.65);
+@my-btn-padding: 0 .8em;
+@my-btn-line-height: 1.8;
+@my-btn-border-radius: 0;
+
+.my-btn {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    transition:
+        border .3s,
+        backgroud-color .3s,
+        box-shadow .3s,
+        text-shadow .3s;
+    font-size:1em;
+    list-style: none;
+    user-select: none;
+    border:1px solid @my-btn-default-border-color;
+    background-color: @my-btn-color;
+    background-image: -webkit-linear-gradient(top,@my-btn-color,@my-btn-dark-color);
+    color:@my-btn-text-color;
+    border-radius: @my-btn-border-radius;
+    padding:@my-btn-padding;
+    line-height: @my-btn-line-height;
+    font-family: inherit;
+    vertical-align: middle;
+    outline: none;
+}
+html .my-btn {
+    -webkit-appearance: none;
+}
+.my-btn:hover {
+    box-shadow: 0px 1px 2px rgba(111,111,111,.2);
+}
+
+@keyframes faceButtonEffect {
+  to {
+    opacity: 0;
+    top: -0.3em;
+    left: -0.3em;
+    bottom: -0.3em;
+    right: -0.3em;
+    border-width: 0.3em;
+  }
+}
+/*ant-design/blob/master/components/button/style/index.less#L134*/
+.my-btn--clicked:before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  bottom: -1px;
+  right: -1px;
+  border-radius: inherit;
+  border: 0 solid darken(@my-btn-color, 20%);
+  opacity: 0.5;
+  -webkit-animation: faceButtonEffect .4s;
+          animation: faceButtonEffect .4s;
+  display: block;
+}
+
+.my-btn:active {
+    transition: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.my-btn--primary {
+    background-color: @my-btn--primary-color;
+    background-image: -webkit-linear-gradient(top,@my-btn--primary-color,@my-btn--primary-dark-color);
+    border-color: transparent;
+    color:white;
+    &.my-btn--clicked:before {
+        border-color:@my-btn--primary-light-color;
+    }
+}
+
+.my-btn--dashed {
+    border-style: dashed;
+    background-color: transparent;
+}
+.my-btn--danger {
+    background-color: @my-btn--danger-color;
+    background-image: -webkit-linear-gradient(top,@my-btn--danger-color,@my-btn--danger-dark-color);
+    border-color: transparent;
+    color:white;
+    &.my-btn--clicked:before {
+        border-color:@my-btn--danger-light-color;
+    }
+}
+
+.my-btn--warning {
+    background-color: @my-btn--warning-color;
+    background-image: -webkit-linear-gradient(top,@my-btn--warning-color,@my-btn--warning-dark-color);
+    border-color: transparent;
+    color:white;
+    &.my-btn--clicked:before {
+        border-color:@my-btn--warning-light-color;
+    }
+}
+
+.my-btn--info {
+    background-color: @my-btn--info-color;
+    background-image: -webkit-linear-gradient(top,@my-btn--info-color,@my-btn--info-dark-color);
+    border-color: transparent;
+    color:white;
+    &.my-btn--clicked:before {
+        border-color:@my-btn--info-light-color;
+    }
+}
+
+.my-btn--success {
+    background-color: @my-btn--success-color;
+    background-image: -webkit-linear-gradient(top,@my-btn--success-color,@my-btn--success-dark-color);
+    border-color: transparent;
+    color:white;
+    &.my-btn--clicked:before {
+        border-color:@my-btn--success-light-color;
+    }
+}
+
+
+.my-btn--disabled {
+    color: @my-btn--disabled-color;
+    cursor: not-allowed;
+}
+@keyframes my-btn-spin{
+    0%{
+        transform:rotate(0deg)
+    }
+    100%{
+        transform:rotate(359deg)
+    }
+}
+html .my-btn-loading-spin {
+    animation: my-btn-spin 1.5s infinite linear;
+}
+.my-btn--icon.my-btn--loading .my-btn-loading>* {
+    display: none;
+}
+.my-btn--loading .my-btn-loading {
+    display: inline-block;
+}
+.my-btn--icon {
+    padding-left: 0;
+    padding-right: 0;
+    width: 2.05em;
+    height: 2em;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 50%;
+}
+.my-btn--append {
+    padding-right: .4em;
+}
+.my-btn--prepend {
+    padding-left: .4em;
+}
+.my-btn--ghost {
+    border-image-source:none;
+    background: none;
+    &.my-btn--primary {
+      border-color:@my-btn--primary-color;
+      color:@my-btn--primary-color;
+    }
+    &.my-btn--danger {
+      border-color:@my-btn--danger-color;
+      color:@my-btn--danger-color;
+    }
+    &.my-btn--warning {
+      border-color:@my-btn--warning-color;
+      color:@my-btn--warning-color;
+    }
+    &.my-btn--info {
+      border-color:@my-btn--info-color;
+      color:@my-btn--info-color;
+    }
+    &.my-btn--success {
+      border-color:@my-btn--success-color;
+      color:@my-btn--success-color;
+    }
+    &.my-btn--disabled{
+      border-color:@my-btn--disabled-color;
+      color:@my-btn--disabled-color;
+    }
+}
+
+.my-btn-group {
+    display: inline-block;
+    .my-btn--primary,
+    .my-btn--danger,
+    .my-btn--warning,
+    .my-btn--info,
+    .my-btn--success{
+      border-left-color: rgba(255,255,255,.4);
+    }
+}
+.my-btn-group .my-btn {
+    border-radius: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+.my-btn-group .my-btn--ghost {
+    border-right-width:0px;
+}
+.my-btn-group .my-btn--ghost:last-child {
+    border-right-width:1px;
+}
+.my-btn-group .my-btn:first-child {
+    border-top-left-radius: .18em;
+    border-bottom-left-radius: .18em;
+    margin-left: 0;
+}
+.my-btn-group .my-btn:last-child {
+    border-top-right-radius: .18em;
+    border-bottom-right-radius: .18em;
+    margin-right: 0;
+}
+
+.my-btn-group .my-btn--primary:first-child {
+    border-left-color:@my-btn--primary-color;
+}
+.my-btn-group .my-btn--ghost.my-btn--primary {
+    border-left-color: @my-btn--primary-color;
+}
+
+.my-btn-group .my-btn--danger:first-child {
+    border-left-color:@my-btn--danger-color;
+}
+.my-btn-group .my-btn--ghost.my-btn--danger {
+    border-left-color: @my-btn--danger-color;
+}
+
+.my-btn-group .my-btn--warning:first-child {
+    border-left-color:@my-btn--warning-color;
+}
+.my-btn-group .my-btn--ghost.my-btn--warning {
+    border-left-color: @my-btn--warning-color;
+}
+
+.my-btn-group .my-btn--info:first-child {
+    border-left-color:@my-btn--info-color;
+}
+.my-btn-group .my-btn--ghost.my-btn--info {
+    border-left-color: @my-btn--info-color;
+}
+
+.my-btn-group .my-btn--success:first-child {
+    border-left-color:@my-btn--success-color;
+}
+.my-btn-group .my-btn--ghost.my-btn--success {
+    border-left-color: @my-btn--success-color;
+}
+
+.my-btn--dropdown {
+    padding-right: 0;
+}
+.my-btn-dropdown {
+    display: inline-block;
+    border-left:1px solid @my-btn-default-border-color;
+    height: 100%;
+    padding-left: .4em;
+    padding-right: .4em;
+}
+.my-btn--primary .my-btn-dropdown,
+.my-btn--info .my-btn-dropdown,
+.my-btn--success .my-btn-dropdown,
+.my-btn--danger .my-btn-dropdown,
+.my-btn--warning .my-btn-dropdown,
+.my-btn--info .my-btn-dropdown{
+    border-left-color: rgba(255,255,255,.2);
+}
+.my-btn--large {
+    font-size: 1.2em;
+}
+.my-btn--small {
+    font-size: 0.8em;
+}
+.my-btn--full {
+    display: block;
+    width: 100%;
+}
+@keyframes faceBtnLoadinganimatedBackground {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+.my-btn--loading {
+  animation: faceBtnLoadinganimatedBackground 5s linear infinite;
+  background: linear-gradient(90deg, @my-btn-color 50%, @my-btn-dark-color 50%);
+  background-size: .6em;
+  &.my-btn--primary {
+    background: linear-gradient(90deg, @my-btn--primary-color 50%, @my-btn--primary-dark-color 50%);
+    background-size: .6em;
+  }
+  &.my-btn--danger {
+    background: linear-gradient(90deg, @my-btn--danger-color 50%, @my-btn--danger-dark-color 50%);
+    background-size: .6em;
+  }
+  &.my-btn--warning {
+    background: linear-gradient(90deg, @my-btn--warning-color 50%, @my-btn--warning-dark-color 50%);
+    background-size: .6em;
+  }
+  &.my-btn--info {
+    background: linear-gradient(90deg, @my-btn--info-color 50%, @my-btn--info-dark-color 50%);
+    background-size: .6em;
+  }
+  &.my-btn--success {
+    background: linear-gradient(90deg, @my-btn--success-color 50%, @my-btn--success-dark-color 50%);
+    background-size: .6em;
+  }
+}

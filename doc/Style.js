@@ -16,7 +16,16 @@ class Style extends React.Component {
                 {' '}
                 <Button type="success" >success</Button>
                 {' '}
+                <Button type="link" href="#" >link</Button>
+                {' '}
                 <Button type="disabled" >diasbled</Button>
+                <hr />
+                <form action="">
+                    <input type="text" name="name" defaultValue="nimo" />
+                    <br />
+                    <Button type="primary" htmlType="submit" >Submit</Button>
+                    <Button htmlType="reset" >Reset</Button>
+                </form>
             </div>
         )
     }

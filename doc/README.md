@@ -1,4 +1,4 @@
-# 示例
+# 文档
 
  > 所有属性参数，可以随意组合，达到各种效果。
 
@@ -91,18 +91,13 @@
 
 ````css
 /* 二次封装 */
-.face-btn--themes-night {
-    background-color: #444;
-    background-image: -webkit-linear-gradient(top,#444,#333);
-    border-color: transparent;
-    color:white;
-}
-.face-btn--themes-night.face-btn--clicked:before {
-    border-color: #444;
+.face-btn--themes-loose {
+    letter-spacing: .3em;
+    text-indent: .3em;
 }
 /* 三次封装 */
-.face-btn--themes-link {
-    text-decoration: underline;
+.face-btn--themes-import {
+    font-weight: bold;
 }
 ````
 
@@ -123,14 +118,21 @@
 <link rel="stylesheet" href="./prefixClassName.css" />
 ````
 
+复制 [lib/index.less](https://github.com/onface/button.react/blob/master/lib/index.less) 和 [lib/less/](https://github.com/onface/button.react/blob/master/lib/less) 下的文件，修改 `border-radius` 部分或者其他代码。配置 `prefixClassName`。
+
+
 
 ````code
 {
     title: '完全自定义样式',
-    desc: '将 [lib/index.css](https://github.com/onface/button.react/blob/master/lib/index.css) 修改为 [doc/prefixClassName.css](https://github.com/onface/button.react/blob/master/doc/prefixClassName.css) 并引用。配置 `prefixClassName`',
+    desc: '',
     html: '<div id="prefixClassName-demo" ></div>',
     js: './PrefixClassName.demo.js',
     source: './PrefixClassName.js',
     open: true
 }
 ````
+
+### addStyle
+
+如果你想要新增一种风格，只需要修改 `less/style.less` 和 `less/settings.less` 文件。比如找到这两个文件的 `// dark` 部分，取消注释，就可以使用 `<Button type="dark">dark</Button>`

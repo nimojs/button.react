@@ -1,22 +1,22 @@
 var React = require('react')
 var Button = require('button.react')
-class ButtonNight extends React.Component {
+class ButtonLoose extends React.Component {
     render () {
         let themes = this.props.themes
         // 二次封装 night
-        themes = themes + ' night'
+        themes = themes + ' loose'
         return (
             <Button {...this.props} themes={themes} />
         )
     }
 }
-class ButtonNightLink extends React.Component {
+class ButtonLooseImport extends React.Component {
     render () {
         let themes = this.props.themes
         // 三次封装 light
-        themes = themes + ' link'
+        themes = themes + ' import'
         return (
-            <ButtonNight {...this.props} themes={themes} />
+            <ButtonLoose {...this.props} themes={themes} />
         )
     }
 }
@@ -25,13 +25,9 @@ class Themes extends React.Component {
         const self = this
         return (
             <div>
-                <ButtonNight size="small" >small</ButtonNight>
-                {' '}
-                <ButtonNight size="large" >large</ButtonNight>
+                <ButtonLoose size="large" >large</ButtonLoose>
                 <hr />
-                <ButtonNightLink size="small" >small</ButtonNightLink>
-                {' '}
-                <ButtonNightLink size="large" >large</ButtonNightLink>
+                <ButtonLooseImport size="large" >large</ButtonLooseImport>
             </div>
         )
     }

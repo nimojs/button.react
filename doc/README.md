@@ -127,7 +127,7 @@
 ````code
 {
     title: '完全自定义样式',
-    desc: '将 [lib/index.css](https://github.com/onface/button.react/blob/master/lib/index.css) 修改为 [./prefixClassName.css](./prefixClassName.css) 并引用。配置 `prefixClassName`',
+    desc: '将 [lib/index.css](https://github.com/onface/button.react/blob/master/lib/index.css) 修改为 [doc/prefixClassName.css](https://github.com/onface/button.react/blob/master/doc/prefixClassName.css) 并引用。配置 `prefixClassName`',
     html: '<div id="prefixClassName-demo" ></div>',
     js: './PrefixClassName.demo.js',
     source: './PrefixClassName.js',

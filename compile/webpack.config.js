@@ -37,7 +37,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /.css$/,
+                test: /.less$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -72,7 +72,8 @@ module.exports = {
     resolve: {
         alias: (function () {
             var alias = {
-                'vue': 'vue/dist/vue.js'
+                'vue': 'vue/dist/vue.js',
+                './index.css': './index.less'
             }
             alias[iPackage.name] = path.resolve(__dirname, '../')
             return alias

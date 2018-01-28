@@ -5,7 +5,6 @@ class ButtonNight extends React.Component {
         let themes = this.props.themes
         // 二次封装 night
         themes = themes + ' night'
-        console.log(this.props.themes, themes)
         return (
             <Button {...this.props} themes={themes} />
         )

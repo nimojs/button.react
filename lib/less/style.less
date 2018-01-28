@@ -1,0 +1,64 @@
+@import "./settings.less";
+@import "./extend.less";
+
+.@{prefix} {
+    .faceButtonStyle(@face-btn--default-color);
+    color:@face-btn--default-text-color;
+    border:1px solid @face-btn--default-border-color;
+    &:focus {
+        box-shadow: 0 0 0 0.15em rgba(111,111,111,.1);
+    }
+    &.@{prefix}--dashed {
+        border-color:@face-btn--default-border-color;
+    }
+    &.@{prefix}--ghost {
+        color: @face-btn--default-text-color;
+        border-color: @face-btn--default-border-color;
+    }
+}
+
+// primary
+.@{prefix}--primary {
+    .faceButtonStyle(@face-btn--primary-color)
+}
+html .@{prefix}-group .@{prefix}--ghost.@{prefix}--primary {
+    border-left-color: @face-btn--primary-color;
+}
+// danger
+.@{prefix}--danger {
+    .faceButtonStyle(@face-btn--danger-color)
+}
+html .@{prefix}-group .@{prefix}--ghost.@{prefix}--danger {
+    border-left-color: @face-btn--danger-color;
+}
+// warning
+.@{prefix}--warning {
+    .faceButtonStyle(@face-btn--warning-color)
+}
+html .@{prefix}-group .@{prefix}--ghost.@{prefix}--warning {
+    border-left-color: @face-btn--warning-color;
+}
+// info
+.@{prefix}--info {
+    .faceButtonStyle(@face-btn--info-color)
+}
+html .@{prefix}-group .@{prefix}--ghost.@{prefix}--info {
+    border-left-color: @face-btn--info-color;
+}
+// success
+html .@{prefix}-group .@{prefix}--ghost.@{prefix}--success {
+    border-left-color: @face-btn--success-color;
+}
+.@{prefix}--success {
+    .faceButtonStyle(@face-btn--success-color)
+}
+
+// dark
+/*
+html .@{prefix}-group .@{prefix}--ghost.@{prefix}--dark {
+    border-left-color: @face-btn--dark-color;
+}
+.@{prefix}--dark {
+    .faceButtonStyle(@face-btn--dark-color)
+}
+*/

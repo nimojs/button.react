@@ -18,26 +18,26 @@ module.exports = {
     output: {
         publicPath: '/',
         path: path.join(__dirname, '../output'),
-		filename: '[name]',
-	    chunkFilename: '__chunk/[id]-[hash]-chunk.js'
+        filename: '[name]',
+        chunkFilename: '__chunk/[id]-[hash]-chunk.js'
     },
     resolve: {
-		alias: {
-			'vue': 'vue/dist/vue.js'
-		}
-	},
+        alias: {
+            'vue': 'vue/dist/vue.js'
+        }
+    },
     devServer: {
         hot: true
     },
     plugins: [
-	    new webpack.HotModuleReplacementPlugin(),
-		new webpack.NamedModulesPlugin(),
-		new webpack.NoEmitOnErrorsPlugin(),
-	],
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+    ],
     module: {
         rules: [
             {
-                test: /.less$/,
+                test: /.(less|css)$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -51,30 +51,34 @@ module.exports = {
                 ]
             },
             {
-				test: /\.vue$/,
-				exclude: /node_modules/,
-				use: [
-					'vue-loader'
-				]
-			},
+                test: /\.vue$/,
+                exclude: /node_modules/,
+                use: [
+                    'vue-loader'
+                ]
+            },
             {
                 test: /\.js$/,
-	            exclude: /node_modules/,
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: 'babel-loader',
                         options: compileConfig.babel
                     }
                 ]
-            }
+            },
+            { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=1&minetype=application/font-woff&name=__media/[path][name]-[hash:6].[ext]' },
+            { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=1&minetype=application/font-woff&name=__media/[path][name]-[hash:6].[ext]' },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=1&minetype=application/octet-stream&name=__media/[path][name]-[hash:6].[ext]' },
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=1&minetype=image/svg+xml&name=__media/[path][name]-[hash:6].[ext]' },
+            { test: /\.(png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/i, loader: 'url-loader?limit=1&name=__media/[path][name]-[hash:6].[ext]'},
+            { test: /\.json$/, loader: 'json-loader' }
         ]
     },
     resolve: {
         alias: (function () {
-            var alias = {
-                'vue': 'vue/dist/vue.js',
-                './index.css': './index.less'
-            }
+            var alias = compileConfig.alias
             alias[iPackage.name] = path.resolve(__dirname, '../')
             return alias
         })()

@@ -1,0 +1,196 @@
+.face-btn {
+  background-color: #f5f5f5;
+  border-color: #ededed;
+  color: white;
+  color: rgba(0, 0, 0, 0.65);
+  border: 1px solid #d9d9d9;
+}
+.face-btn:hover {
+  background-color: #fafafa;
+}
+.face-btn.face-btn--clicked:before {
+  border-color: #c2c2c2;
+}
+.face-btn.face-btn--ghost {
+  border-color: #f5f5f5;
+  color: #f5f5f5;
+}
+.face-btn.face-btn--ghost.face-btn--loading {
+  color: white;
+  background-color: #f5f5f5;
+}
+.face-btn.face-btn--ghost.face-btn--loading:hover {
+  background-color: #fafafa;
+}
+.face-btn.face-btn--dashed {
+  border-color: #f5f5f5;
+}
+.face-btn.face-btn--dashed {
+  border-color: #d9d9d9;
+}
+.face-btn.face-btn--ghost {
+  color: rgba(0, 0, 0, 0.65);
+  border-color: #d9d9d9;
+}
+.face-btn--link {
+  background: none;
+  border-color: transparent;
+  color: #4387fd;
+}
+.face-btn--link:hover {
+  text-decoration: underline;
+  box-shadow: none;
+  background-image: none;
+  background-color: transparent;
+}
+.face-btn--link:focus {
+  box-shadow: none;
+}
+.face-btn--primary {
+  background-color: #4387fd;
+  border-color: #347dfd;
+  color: white;
+}
+.face-btn--primary:hover {
+  background-color: #4d8dfd;
+}
+.face-btn--primary.face-btn--clicked:before {
+  border-color: #0250d8;
+}
+.face-btn--primary.face-btn--ghost {
+  border-color: #4387fd;
+  color: #4387fd;
+}
+.face-btn--primary.face-btn--ghost.face-btn--loading {
+  color: white;
+  background-color: #4387fd;
+}
+.face-btn--primary.face-btn--ghost.face-btn--loading:hover {
+  background-color: #4d8dfd;
+}
+.face-btn--primary.face-btn--dashed {
+  border-color: #4387fd;
+}
+html .face-btn-group .face-btn--ghost.face-btn--primary {
+  border-left-color: #4387fd;
+}
+.face-btn--danger {
+  background-color: #d85c4b;
+  border-color: #d5513e;
+  color: white;
+}
+.face-btn--danger:hover {
+  background-color: #da6453;
+}
+.face-btn--danger.face-btn--clicked:before {
+  border-color: #9b3022;
+}
+.face-btn--danger.face-btn--ghost {
+  border-color: #d85c4b;
+  color: #d85c4b;
+}
+.face-btn--danger.face-btn--ghost.face-btn--loading {
+  color: white;
+  background-color: #d85c4b;
+}
+.face-btn--danger.face-btn--ghost.face-btn--loading:hover {
+  background-color: #da6453;
+}
+.face-btn--danger.face-btn--dashed {
+  border-color: #d85c4b;
+}
+html .face-btn-group .face-btn--ghost.face-btn--danger {
+  border-left-color: #d85c4b;
+}
+.face-btn--warning {
+  background-color: #f2ad54;
+  border-color: #f1a646;
+  color: white;
+}
+.face-btn--warning:hover {
+  background-color: #f3b25d;
+}
+.face-btn--warning.face-btn--clicked:before {
+  border-color: #d07c10;
+}
+.face-btn--warning.face-btn--ghost {
+  border-color: #f2ad54;
+  color: #f2ad54;
+}
+.face-btn--warning.face-btn--ghost.face-btn--loading {
+  color: white;
+  background-color: #f2ad54;
+}
+.face-btn--warning.face-btn--ghost.face-btn--loading:hover {
+  background-color: #f3b25d;
+}
+.face-btn--warning.face-btn--dashed {
+  border-color: #f2ad54;
+}
+html .face-btn-group .face-btn--ghost.face-btn--warning {
+  border-left-color: #f2ad54;
+}
+.face-btn--info {
+  background-color: #03a9f4;
+  border-color: #039fe5;
+  color: white;
+}
+.face-btn--info:hover {
+  background-color: #05affc;
+}
+.face-btn--info.face-btn--clicked:before {
+  border-color: #02638f;
+}
+.face-btn--info.face-btn--ghost {
+  border-color: #03a9f4;
+  color: #03a9f4;
+}
+.face-btn--info.face-btn--ghost.face-btn--loading {
+  color: white;
+  background-color: #03a9f4;
+}
+.face-btn--info.face-btn--ghost.face-btn--loading:hover {
+  background-color: #05affc;
+}
+.face-btn--info.face-btn--dashed {
+  border-color: #03a9f4;
+}
+html .face-btn-group .face-btn--ghost.face-btn--info {
+  border-left-color: #03a9f4;
+}
+.face-btn--success {
+  background-color: #5dc75d;
+  border-color: #52c352;
+  color: white;
+}
+.face-btn--success:hover {
+  background-color: #65ca65;
+}
+.face-btn--success.face-btn--clicked:before {
+  border-color: #318d31;
+}
+.face-btn--success.face-btn--ghost {
+  border-color: #5dc75d;
+  color: #5dc75d;
+}
+.face-btn--success.face-btn--ghost.face-btn--loading {
+  color: white;
+  background-color: #5dc75d;
+}
+.face-btn--success.face-btn--ghost.face-btn--loading:hover {
+  background-color: #65ca65;
+}
+.face-btn--success.face-btn--dashed {
+  border-color: #5dc75d;
+}
+html .face-btn-group .face-btn--ghost.face-btn--success {
+  border-left-color: #5dc75d;
+}
+/*
+html .@{prefix}-group .@{prefix}--ghost.@{prefix}--dark {
+    border-left-color: @face-btn--dark-color;
+}
+.@{prefix}--dark {
+    .faceButtonStyle(@face-btn--dark-color)
+}
+*/
